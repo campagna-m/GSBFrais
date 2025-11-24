@@ -192,8 +192,7 @@ class GsbModel extends Model
     /** Supprime un frais hors forfait */
     public function supprimer_frais_hors_forfait($idFrais)
     {
-        $query = $this->db->query("CALL SupprimerFraisHorsForfait(?)", [$idFrais]);
-        return $query->getResult();
+        return $this->db->query("CALL SupprimerFraisHorsForfait($idFrais)");
     }
 
     /** Crée un nouveau frais hors forfait */
