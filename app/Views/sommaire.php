@@ -38,10 +38,10 @@ $session = session();
         <?php if ($session->get('idRole') == 'CO') {
         ?>
             <li>
-                <?= anchor('validation', 'Validation fiche de frais', ['title' => 'Valider les fiches de frais des visiteurs']) ?>
+                <?= anchor('validation', 'Valider fiches de frais', ['title' => 'Valider les fiches de frais des visiteurs']) ?>
             </li>
             <li>
-                <?= anchor('suivi', 'Suivre fiches de frais', ['title' => 'Consulter le suivi des fiches de frais']) ?>
+                <?= anchor('suivi', 'Rembourser fiches de frais', ['title' => 'Consulter le suivi des fiches de frais']) ?>
             </li>
         <?php
         }
