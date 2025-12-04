@@ -41,7 +41,7 @@ $session = session();
                 <?= anchor('validation', 'Valider fiches', ['title' => 'Valider les fiches de frais des visiteurs']) ?>
             </li>
             <li>
-                <?= anchor('suivi', 'Rembourser fiches', ['title' => 'Consulter le suivi des fiches de frais']) ?>
+                <?= anchor('remboursement', 'Rembourser fiches', ['title' => 'Rembourser les fiches de frais']) ?>
             </li>
         <?php
         }

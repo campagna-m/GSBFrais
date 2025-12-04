@@ -21,4 +21,4 @@ $routes->get('etatfrais', 'Etatfrais::index');
 $routes->post('etatfrais/mois', 'Etatfrais::selectionner_mois');
 
 $routes->get('validation', 'Validation::index');
-$routes->get('suivi', 'Suivi::index');
+$routes->get('remboursement', 'Remboursement::index');
