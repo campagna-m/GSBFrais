@@ -18,7 +18,7 @@ class Validation extends BaseController
             return redirect()->to('/');
         }
 
-        $data['titre'] = "Bienvenue sur l'intranet GSB";
+        $data['titre'] = "Fiches de frais à valider";
         
         return view('structures/page_entete')
             . view('structures/messages')

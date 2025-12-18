@@ -206,4 +206,43 @@ class GsbModel extends Model
         ]);
         return $resultat;
     }
+
+
+
+
+
+
+
+
+    // Récupère tous les visiteurs médicaux
+    public function get_tous_les_visiteurs()
+    {
+        return $this->db->table('utilisateur')
+            ->select('idutilisateur, nom, prenom')
+            ->where('idRole', 'VM')
+            ->orderBy('nom', 'ASC')
+            ->get()
+            ->getResultArray();
+    }
+
+    // Récupère les mois qui sont en état "VA"
+    public function get_les_mois_VA($idVisiteur)
+    {
+   
+        
+    }
+
+
+
+
+    // Rembourser fiches fraisfrais
+    public function maj_etat_fiches_mois_rembourse($idvisiteur, $annee, $mois)
+    {
+        return $this->db->table('fichefrais')
+            ->where('idEtat', 'VA')
+            ->where('idVisiteur', $idvisiteur)
+            ->where('annee', $annee)
+            ->where('mois', $mois)
+            ->update(['idEtat' => 'RB']);
+    }
 }

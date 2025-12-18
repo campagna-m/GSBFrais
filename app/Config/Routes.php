@@ -20,5 +20,11 @@ $routes->get('gererfrais/supp_fraishorsforfait/(:num)', 'Gererfrais::supprimer_f
 $routes->get('etatfrais', 'Etatfrais::index');
 $routes->post('etatfrais/mois', 'Etatfrais::selectionner_mois');
 
-$routes->get('validation', 'Validation::index');
 $routes->get('remboursement', 'Remboursement::index');
+
+
+$routes->post('remboursement/selectionner_visiteur', 'Remboursement::selectionner_visiteur');
+$routes->post('remboursement/selectionner_mois', 'Remboursement::selectionner_mois');
+$routes->post('remboursement/maj_etat_fiches_mois_rembourse', 'Remboursement::maj_etat_fiches_mois_rembourse');
+
+$routes->get('validation', 'Validation::index');
