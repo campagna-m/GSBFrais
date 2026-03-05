@@ -1,0 +1,623 @@
+DEBUG - 2025-10-11 17:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 17:28:53 --> mysqli_sql_exception: Champ 'id' inconnu dans field list in C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `n...', 0)
+#1 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `n...')
+#2 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `n...')
+#3 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `n...', Array, false)
+#4 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Models\GsbModel.php(16): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_visiteur('fsdf', 'fds')
+#6 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+#7 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#8 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\rewrite.php(44): require_once('C:\\Users\\Guilla...')
+#13 {main}
+CRITICAL - 2025-10-11 17:28:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Champ 'id' inconnu dans field list
+[Method: POST, Route: connexion/valider]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 2 APPPATH\Models\GsbModel.php(16): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_visiteur('fsdf', 'fds')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+CRITICAL - 2025-10-11 17:28:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Champ 'id' inconnu dans field list
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = \'fsdf\'
+AND `mdp` = \'fds\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = \'fsdf\'
+AND `mdp` = \'fds\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 4 APPPATH\Models\GsbModel.php(16): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_visiteur('fsdf', 'fds')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+CRITICAL - 2025-10-11 17:28:53 --> [Caused by] mysqli_sql_exception: Champ 'id' inconnu dans field list
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = \'fsdf\'
+AND `mdp` = \'fds\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = \'fsdf\'
+AND `mdp` = \'fds\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = \'fsdf\'
+AND `mdp` = \'fds\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 5 APPPATH\Models\GsbModel.php(16): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_visiteur('fsdf', 'fds')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 18:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 18:52:55 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: connexion/valider]
+in APPPATH\Controllers\Connexion.php on line 56.
+ 1 APPPATH\Controllers\Connexion.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Controllers\\Connexion.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 18:53:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 18:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 18:53:59 --> ArgumentCountError: Too few arguments to function App\Models\GsbModel::est_premier_frais_mois(), 2 passed in C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Controllers\Gererfrais.php on line 35 and exactly 3 expected
+[Method: GET, Route: gererfrais]
+in APPPATH\Models\GsbModel.php on line 85.
+ 1 APPPATH\Controllers\Gererfrais.php(35): App\Models\GsbModel->est_premier_frais_mois(null, '202510')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 19:38:42 --> Error: Call to a member function table() on null
+[Method: GET, Route: gererfrais]
+in APPPATH\Models\GsbModel.php on line 93.
+ 1 APPPATH\Controllers\Gererfrais.php(39): App\Models\GsbModel->est_premier_frais_mois('a131', '2025', '10')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 19:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 19:39:38 --> Error: Call to a member function table() on null
+[Method: POST, Route: connexion/valider]
+in APPPATH\Models\GsbModel.php on line 18.
+ 1 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_visiteur('lvillachane', 'jux7g')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 19:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 19:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 19:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 19:41:46 --> ErrorException: Undefined array key "idEtat"
+[Method: GET, Route: gererfrais]
+in APPPATH\Models\GsbModel.php on line 129.
+ 1 APPPATH\Models\GsbModel.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idEtat"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Models\\GsbModel.php', 129)
+ 2 APPPATH\Controllers\Gererfrais.php(40): App\Models\GsbModel->cree_nouvelles_lignes_frais('a131', '2025', '10')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 19:42:53 --> mysqli_sql_exception: Champ 'id' inconnu dans field list in C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`\nFRO...', 0)
+#1 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`\nFRO...')
+#2 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`\nFRO...')
+#3 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`\nFRO...', Array, false)
+#4 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Models\GsbModel.php(115): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Models\GsbModel.php(149): App\Models\GsbModel->get_les_id_frais_forfait()
+#6 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Controllers\Gererfrais.php(40): App\Models\GsbModel->cree_nouvelles_lignes_frais('a131', '2025', '10')
+#7 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+#8 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+#9 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\rewrite.php(44): require_once('C:\\Users\\Guilla...')
+#14 {main}
+CRITICAL - 2025-10-11 19:42:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Champ 'id' inconnu dans field list
+[Method: GET, Route: gererfrais]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`
+FROM `fraisforfait`
+ORDER BY `id`', [], false)
+ 2 APPPATH\Models\GsbModel.php(115): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\GsbModel.php(149): App\Models\GsbModel->get_les_id_frais_forfait()
+ 4 APPPATH\Controllers\Gererfrais.php(40): App\Models\GsbModel->cree_nouvelles_lignes_frais('a131', '2025', '10')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+CRITICAL - 2025-10-11 19:42:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Champ 'id' inconnu dans field list
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`
+FROM `fraisforfait`
+ORDER BY `id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`
+FROM `fraisforfait`
+ORDER BY `id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`
+FROM `fraisforfait`
+ORDER BY `id`', [], false)
+ 4 APPPATH\Models\GsbModel.php(115): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\GsbModel.php(149): App\Models\GsbModel->get_les_id_frais_forfait()
+ 6 APPPATH\Controllers\Gererfrais.php(40): App\Models\GsbModel->cree_nouvelles_lignes_frais('a131', '2025', '10')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+CRITICAL - 2025-10-11 19:42:53 --> [Caused by] mysqli_sql_exception: Champ 'id' inconnu dans field list
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`
+FROM `fraisforfait`
+ORDER BY `id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`
+FROM `fraisforfait`
+ORDER BY `id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`
+FROM `fraisforfait`
+ORDER BY `id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`
+FROM `fraisforfait`
+ORDER BY `id`', [], false)
+ 5 APPPATH\Models\GsbModel.php(115): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\GsbModel.php(149): App\Models\GsbModel->get_les_id_frais_forfait()
+ 7 APPPATH\Controllers\Gererfrais.php(40): App\Models\GsbModel->cree_nouvelles_lignes_frais('a131', '2025', '10')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:43:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 19:43:55 --> TypeError: App\Libraries\Gsb_lib::get_nom_mois(): Argument #1 ($unNoMois) must be of type int, string given, called in C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Controllers\Gererfrais.php on line 120
+[Method: GET, Route: gererfrais]
+in APPPATH\Libraries\Gsb_lib.php on line 41.
+ 1 APPPATH\Controllers\Gererfrais.php(120): App\Libraries\Gsb_lib->get_nom_mois('')
+ 2 APPPATH\Controllers\Gererfrais.php(47): App\Controllers\Gererfrais->commun([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:47:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 19:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 19:47:32 --> mysqli_sql_exception: La table 'gsbfrais-2025.etat' n'existe pas in C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `fichefr...', 0)
+#1 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fichefr...')
+#2 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fichefr...')
+#3 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `fichefr...', Array, false)
+#4 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Models\GsbModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Controllers\Etatfrais.php(91): App\Models\GsbModel->get_les_infos_ficheFrais('a131', '2025', '10')
+#6 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Controllers\Etatfrais.php(36): App\Controllers\Etatfrais->commun()
+#7 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(933): App\Controllers\Etatfrais->index()
+#8 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+#9 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\rewrite.php(44): require_once('C:\\Users\\Guilla...')
+#14 {main}
+CRITICAL - 2025-10-11 19:47:32 --> CodeIgniter\Database\Exceptions\DatabaseException: La table 'gsbfrais-2025.etat' n'existe pas
+[Method: GET, Route: etatfrais]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `fichefrais`.`idFiche`, `fichefrais`.`idEtat`, `fichefrais`.`dateModif`, `fichefrais`.`nbJustificatifs`, `fichefrais`.`montantValide`, `etat`.`libelle`
+FROM `fichefrais`
+JOIN `etat` ON `fichefrais`.`idEtat` = `etat`.`idetat`
+WHERE `fichefrais`.`idFiche` = :fichefrais.idFiche:', [...], false)
+ 2 APPPATH\Models\GsbModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Etatfrais.php(91): App\Models\GsbModel->get_les_infos_ficheFrais('a131', '2025', '10')
+ 4 APPPATH\Controllers\Etatfrais.php(36): App\Controllers\Etatfrais->commun()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+CRITICAL - 2025-10-11 19:47:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: La table 'gsbfrais-2025.etat' n'existe pas
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fichefrais`.`idFiche`, `fichefrais`.`idEtat`, `fichefrais`.`dateModif`, `fichefrais`.`nbJustificatifs`, `fichefrais`.`montantValide`, `etat`.`libelle`
+FROM `fichefrais`
+JOIN `etat` ON `fichefrais`.`idEtat` = `etat`.`idetat`
+WHERE `fichefrais`.`idFiche` = \'a131\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fichefrais`.`idFiche`, `fichefrais`.`idEtat`, `fichefrais`.`dateModif`, `fichefrais`.`nbJustificatifs`, `fichefrais`.`montantValide`, `etat`.`libelle`
+FROM `fichefrais`
+JOIN `etat` ON `fichefrais`.`idEtat` = `etat`.`idetat`
+WHERE `fichefrais`.`idFiche` = \'a131\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `fichefrais`.`idFiche`, `fichefrais`.`idEtat`, `fichefrais`.`dateModif`, `fichefrais`.`nbJustificatifs`, `fichefrais`.`montantValide`, `etat`.`libelle`
+FROM `fichefrais`
+JOIN `etat` ON `fichefrais`.`idEtat` = `etat`.`idetat`
+WHERE `fichefrais`.`idFiche` = :fichefrais.idFiche:', [...], false)
+ 4 APPPATH\Models\GsbModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Etatfrais.php(91): App\Models\GsbModel->get_les_infos_ficheFrais('a131', '2025', '10')
+ 6 APPPATH\Controllers\Etatfrais.php(36): App\Controllers\Etatfrais->commun()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+CRITICAL - 2025-10-11 19:47:32 --> [Caused by] mysqli_sql_exception: La table 'gsbfrais-2025.etat' n'existe pas
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `fichefrais`.`idFiche`, `fichefrais`.`idEtat`, `fichefrais`.`dateModif`, `fichefrais`.`nbJustificatifs`, `fichefrais`.`montantValide`, `etat`.`libelle`
+FROM `fichefrais`
+JOIN `etat` ON `fichefrais`.`idEtat` = `etat`.`idetat`
+WHERE `fichefrais`.`idFiche` = \'a131\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fichefrais`.`idFiche`, `fichefrais`.`idEtat`, `fichefrais`.`dateModif`, `fichefrais`.`nbJustificatifs`, `fichefrais`.`montantValide`, `etat`.`libelle`
+FROM `fichefrais`
+JOIN `etat` ON `fichefrais`.`idEtat` = `etat`.`idetat`
+WHERE `fichefrais`.`idFiche` = \'a131\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fichefrais`.`idFiche`, `fichefrais`.`idEtat`, `fichefrais`.`dateModif`, `fichefrais`.`nbJustificatifs`, `fichefrais`.`montantValide`, `etat`.`libelle`
+FROM `fichefrais`
+JOIN `etat` ON `fichefrais`.`idEtat` = `etat`.`idetat`
+WHERE `fichefrais`.`idFiche` = \'a131\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `fichefrais`.`idFiche`, `fichefrais`.`idEtat`, `fichefrais`.`dateModif`, `fichefrais`.`nbJustificatifs`, `fichefrais`.`montantValide`, `etat`.`libelle`
+FROM `fichefrais`
+JOIN `etat` ON `fichefrais`.`idEtat` = `etat`.`idetat`
+WHERE `fichefrais`.`idFiche` = :fichefrais.idFiche:', [...], false)
+ 5 APPPATH\Models\GsbModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Etatfrais.php(91): App\Models\GsbModel->get_les_infos_ficheFrais('a131', '2025', '10')
+ 7 APPPATH\Controllers\Etatfrais.php(36): App\Controllers\Etatfrais->commun()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 19:48:49 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: etatfrais]
+in APPPATH\Controllers\Etatfrais.php on line 92.
+ 1 APPPATH\Controllers\Etatfrais.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Controllers\\Etatfrais.php', 92)
+ 2 APPPATH\Controllers\Etatfrais.php(36): App\Controllers\Etatfrais->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 19:50:03 --> ErrorException: Undefined array key "dateModif"
+[Method: GET, Route: etatfrais]
+in APPPATH\Controllers\Etatfrais.php on line 93.
+ 1 APPPATH\Controllers\Etatfrais.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dateModif"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Controllers\\Etatfrais.php', 93)
+ 2 APPPATH\Controllers\Etatfrais.php(36): App\Controllers\Etatfrais->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 19:52:25 --> ErrorException: Undefined property: App\Controllers\Etatfrais::$id_mois
+[Method: GET, Route: etatfrais]
+in APPPATH\Controllers\Etatfrais.php on line 105.
+ 1 APPPATH\Controllers\Etatfrais.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Etatfrais::$id_mois', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Controllers\\Etatfrais.php', 105)
+ 2 APPPATH\Controllers\Etatfrais.php(36): App\Controllers\Etatfrais->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 19:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 19:53:48 --> ErrorException: Undefined array key "date"
+[Method: POST, Route: etatfrais/mois]
+in APPPATH\Views\fraishorsforfait_table.php on line 12.
+ 1 APPPATH\Views\fraishorsforfait_table.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "date"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('fraishorsforfait_table', [], true)
+ 5 APPPATH\Controllers\Etatfrais.php(106): view('fraishorsforfait_table', [...])
+ 6 APPPATH\Controllers\Etatfrais.php(43): App\Controllers\Etatfrais->commun()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->selectionner_mois()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 19:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:10:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:14:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 20:14:40 --> ErrorException: Undefined array key "dateFraisFR"
+[Method: POST, Route: etatfrais/mois]
+in APPPATH\Views\fraishorsforfait_table.php on line 12.
+ 1 APPPATH\Views\fraishorsforfait_table.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dateFraisFR"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('fraishorsforfait_table', [], true)
+ 5 APPPATH\Controllers\Etatfrais.php(110): view('fraishorsforfait_table', [...])
+ 6 APPPATH\Controllers\Etatfrais.php(43): App\Controllers\Etatfrais->commun()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->selectionner_mois()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 20:20:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:21:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:21:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 20:22:17 --> ErrorException: Undefined array key "montantFormate"
+[Method: POST, Route: etatfrais/mois]
+in APPPATH\Controllers\Etatfrais.php on line 108.
+ 1 APPPATH\Controllers\Etatfrais.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "montantFormate"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Controllers\\Etatfrais.php', 108)
+ 2 APPPATH\Controllers\Etatfrais.php(43): App\Controllers\Etatfrais->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Etatfrais->selectionner_mois()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Etatfrais))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 20:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:23:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 20:24:13 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: gererfrais]
+in APPPATH\Views\fraisforfait_edit.php on line 11.
+ 1 APPPATH\Views\fraisforfait_edit.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraisforfait_edit.php', 11)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraisforfait_edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('fraisforfait_edit', [], true)
+ 5 APPPATH\Controllers\Gererfrais.php(133): view('fraisforfait_edit', [...])
+ 6 APPPATH\Controllers\Gererfrais.php(48): App\Controllers\Gererfrais->commun([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 20:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:28:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:28:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:30:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:39:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 20:39:54 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: gererfrais]
+in APPPATH\Controllers\Gererfrais.php on line 29.
+ 1 APPPATH\Controllers\Gererfrais.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Controllers\\Gererfrais.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Gererfrais->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 20:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 20:41:08 --> mysqli_sql_exception: Champ 'date' inconnu dans field list in C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `li...', 0)
+#1 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `li...')
+#2 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `li...')
+#3 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `li...', Array, false)
+#4 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Models\GsbModel.php(205): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\app\Controllers\Gererfrais.php(95): App\Models\GsbModel->creer_nouveau_frais_hors_forfait('570', 'Test ajout hors...', '2025-10-08', '547')
+#6 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(933): App\Controllers\Gererfrais->valider_creation_fraishorsforfait()
+#7 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+#8 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-V2\system\rewrite.php(44): require_once('C:\\Users\\Guilla...')
+#13 {main}
+CRITICAL - 2025-10-11 20:41:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Champ 'date' inconnu dans field list
+[Method: POST, Route: gererfrais/creation_fraishorsforfait]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lignefraishorsforfait` (`idFiche`, `libelle`, `date`, `montant`) VALUES (:idFiche:, :libelle:, :date:, :montant:)', [...], false)
+ 2 APPPATH\Models\GsbModel.php(205): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Gererfrais.php(95): App\Models\GsbModel->creer_nouveau_frais_hors_forfait('570', 'Test ajout hors forfait', '2025-10-08', '547')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->valider_creation_fraishorsforfait()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+CRITICAL - 2025-10-11 20:41:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Champ 'date' inconnu dans field list
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lignefraishorsforfait` (`idFiche`, `libelle`, `date`, `montant`) VALUES (\'570\', \'Test ajout hors forfait\', \'2025-10-08\', \'547\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lignefraishorsforfait` (`idFiche`, `libelle`, `date`, `montant`) VALUES (\'570\', \'Test ajout hors forfait\', \'2025-10-08\', \'547\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lignefraishorsforfait` (`idFiche`, `libelle`, `date`, `montant`) VALUES (:idFiche:, :libelle:, :date:, :montant:)', [...], false)
+ 4 APPPATH\Models\GsbModel.php(205): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Gererfrais.php(95): App\Models\GsbModel->creer_nouveau_frais_hors_forfait('570', 'Test ajout hors forfait', '2025-10-08', '547')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->valider_creation_fraishorsforfait()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+CRITICAL - 2025-10-11 20:41:08 --> [Caused by] mysqli_sql_exception: Champ 'date' inconnu dans field list
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `lignefraishorsforfait` (`idFiche`, `libelle`, `date`, `montant`) VALUES (\'570\', \'Test ajout hors forfait\', \'2025-10-08\', \'547\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lignefraishorsforfait` (`idFiche`, `libelle`, `date`, `montant`) VALUES (\'570\', \'Test ajout hors forfait\', \'2025-10-08\', \'547\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lignefraishorsforfait` (`idFiche`, `libelle`, `date`, `montant`) VALUES (\'570\', \'Test ajout hors forfait\', \'2025-10-08\', \'547\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lignefraishorsforfait` (`idFiche`, `libelle`, `date`, `montant`) VALUES (:idFiche:, :libelle:, :date:, :montant:)', [...], false)
+ 5 APPPATH\Models\GsbModel.php(205): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Gererfrais.php(95): App\Models\GsbModel->creer_nouveau_frais_hors_forfait('570', 'Test ajout hors forfait', '2025-10-08', '547')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->valider_creation_fraishorsforfait()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 20:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 20:41:52 --> ErrorException: Undefined array key "dateFraisFR"
+[Method: POST, Route: gererfrais/creation_fraishorsforfait]
+in APPPATH\Views\fraishorsforfait_table_sup.php on line 13.
+ 1 APPPATH\Views\fraishorsforfait_table_sup.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dateFraisFR"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table_sup.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table_sup.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('fraishorsforfait_table_sup', [], true)
+ 5 APPPATH\Controllers\Gererfrais.php(141): view('fraishorsforfait_table_sup', [...])
+ 6 APPPATH\Controllers\Gererfrais.php(102): App\Controllers\Gererfrais->commun([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->valider_creation_fraishorsforfait()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 20:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 20:42:34 --> ErrorException: Undefined array key "dateFraisFR"
+[Method: GET, Route: gererfrais]
+in APPPATH\Views\fraishorsforfait_table_sup.php on line 13.
+ 1 APPPATH\Views\fraishorsforfait_table_sup.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dateFraisFR"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table_sup.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table_sup.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('fraishorsforfait_table_sup', [], true)
+ 5 APPPATH\Controllers\Gererfrais.php(141): view('fraishorsforfait_table_sup', [...])
+ 6 APPPATH\Controllers\Gererfrais.php(52): App\Controllers\Gererfrais->commun([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 20:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 20:44:07 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: gererfrais]
+in APPPATH\Views\fraishorsforfait_table_sup.php on line 17.
+ 1 APPPATH\Views\fraishorsforfait_table_sup.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table_sup.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\app\\Views\\fraishorsforfait_table_sup.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('fraishorsforfait_table_sup', [], true)
+ 5 APPPATH\Controllers\Gererfrais.php(148): view('fraishorsforfait_table_sup', [...])
+ 6 APPPATH\Controllers\Gererfrais.php(52): App\Controllers\Gererfrais->commun([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gererfrais->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gererfrais))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-V2\\public\\index.php')
+DEBUG - 2025-10-11 20:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:44:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 20:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

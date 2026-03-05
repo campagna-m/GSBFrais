@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+
 $routes->get('/', 'Connexion::login');
 $routes->get('connexion', 'Connexion::login');
 $routes->post('/connexion/valider', 'Connexion::valider');
@@ -20,11 +21,8 @@ $routes->get('gererfrais/supp_fraishorsforfait/(:num)', 'Gererfrais::supprimer_f
 $routes->get('etatfrais', 'Etatfrais::index');
 $routes->post('etatfrais/mois', 'Etatfrais::selectionner_mois');
 
-$routes->get('remboursement', 'Remboursement::index');
-
-
-$routes->post('remboursement/selectionner_visiteur', 'Remboursement::selectionner_visiteur');
-$routes->post('remboursement/selectionner_mois', 'Remboursement::selectionner_mois');
-$routes->post('remboursement/maj_etat_fiches_mois_rembourse', 'Remboursement::maj_etat_fiches_mois_rembourse');
-
 $routes->get('validation', 'Validation::index');
+
+$routes->get('remboursement', 'Remboursement::index');
+$routes->post('remboursement/selection_fiches_frais_va', 'Remboursement::selection_fiches_frais_va');
+$routes->post('remboursement/maj_etat_fiches_rembourse', 'Remboursement::maj_etat_fiches_mois_rembourse');

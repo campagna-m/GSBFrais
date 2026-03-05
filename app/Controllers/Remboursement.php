@@ -7,10 +7,8 @@ use App\Libraries\Gsb_lib;
 
 class Remboursement extends BaseController
 {
-    protected $id_visiteur_selectionne;
-    protected $annee_mois;
+    private $selection_visiteur_fichefrais_va;
     private $id_fiche;
-
     protected $gsb_lib;
     protected $gsb_model;
 
@@ -30,37 +28,26 @@ class Remboursement extends BaseController
             return redirect()->to('/');
         }
 
-        $this->id_visiteur_selectionne = null;
-        $this->annee_mois = null;
-        $this->id_fiche = null;
+        $this->selection_visiteur_fichefrais_va = null;
         return $this->commun();
     }
 
-    /** Sélection d’un visiteur */
-    public function selectionner_visiteur()
+    // Sélection des fiches via la liste déroulante
+    public function selection_fiches_frais_va()
     {
-        $this->id_visiteur_selectionne = $this->request->getPost('lstVisiteur');
-        return $this->commun();
-    }
-
-    /** Sélection d’un mois */
-    public function selectionner_mois()
-    {
-        $this->annee_mois = $this->request->getPost('lstMois');
+        $this->selection_visiteur_fichefrais_va = $this->request->getPost('lstVisiteur');
         return $this->commun();
     }
 
     /** Rembourse les fiches du visiteur */
     public function maj_etat_fiches_mois_rembourse()
     {
-        $idVisiteur = $this->request->getPost('lstVisiteur');
-        $anneeMois  = $this->request->getPost('lstMois');
+        $id_visiteur = $this->request->getPost('visiteur');
+        $annee = $this->request->getPost('annee');
+        $mois = $this->request->getPost('mois');
 
-        // Séparer année et mois
-        $annee = substr($anneeMois, 0, 4);
-        $mois  = substr($anneeMois, 4, 2);
+        $this->gsb_model->maj_etat_fiches_rembourse($id_visiteur, $annee, $mois);
 
-        $this->gsb_model->maj_etat_fiches_mois_rembourse($idVisiteur, $annee, $mois);
         return $this->commun();
     }
 
@@ -71,89 +58,76 @@ class Remboursement extends BaseController
         echo view('structures/messages');
         echo view('sommaire');
 
-        $data['titre'] = "Fiches de frais à rembourser";
+        $data['titre'] = 'Fiches de frais à rembourser';
         echo view('structures/contenu_entete', $data);
 
-        // Liste des visiteurs
-        $les_visiteurs = $this->gsb_model->get_tous_les_visiteurs();
+        // Liste des visiteurs VA
+        $les_visiteurs = $this->gsb_model->get_visiteurs_fiches_VA();
 
         if (!$les_visiteurs) {
-            return redirect()->back()->with('erreurs', "Aucun visiteur trouvé");
+            return redirect()->back()->with('erreurs', 'Aucun visiteur trouvé');
         }
 
         // Récupère le visiteur sélectionné depuis la session
-        if ($this->id_visiteur_selectionne !== null) {
+        if ($this->selection_visiteur_fichefrais_va !== null) {
         } else {
-            $this->id_visiteur_selectionne = session()->get('id_visiteur_selectionne');
+            $this->selection_visiteur_fichefrais_va = session()->get('selection_visiteur_fichefrais_va');
         }
 
         // Si aucun visiteur sélectionné, prendre le premier visiteur de la liste
-        if (!$this->id_visiteur_selectionne) {
-            $this->id_visiteur_selectionne = $les_visiteurs[0]['idutilisateur'];
+        if (!$this->selection_visiteur_fichefrais_va) {
+            $this->selection_visiteur_fichefrais_va = $les_visiteurs[0]['idutilisateur'];
         }
 
         // Sauvegarde le visiteur sélectionné en session
-        $idVisiteur = $this->id_visiteur_selectionne;
-        session()->set('id_visiteur_selectionne', $idVisiteur);
+        session()->set('selection_visiteur_fichefrais_va', $this->selection_visiteur_fichefrais_va);
 
         // Liste déroulante des visiteurs
         $options_visiteurs = [];
         foreach ($les_visiteurs as $un_visiteur) {
-            $libelle = $un_visiteur['nom'] . " " . $un_visiteur['prenom'];
+            $nom_mois = $this->gsb_lib->get_nom_mois($un_visiteur['mois']);
+            $libelle = $un_visiteur['nom'] . " " . $un_visiteur['prenom'] . " - " . $nom_mois . " " . $un_visiteur['annee'];
             $options_visiteurs[$un_visiteur['idutilisateur']] = $libelle;
         }
 
         $data_visiteur['lst_contenu'] = $options_visiteurs;
-        $data_visiteur['lst_select'] = $this->id_visiteur_selectionne;
-        $data_visiteur['lst_action'] = 'remboursement/selectionner_visiteur';
+        $data_visiteur['lst_select'] = $this->selection_visiteur_fichefrais_va;
+        $data_visiteur['lst_action'] = 'remboursement/selection_fiches_frais_va';
         $data_visiteur['lst_id'] = 'lstVisiteur';
         $data_visiteur['lst_label'] = 'Visiteur';
-        $data_visiteur['sc_titre'] = 'Sélectionnez un visiteur :';
+        $data_visiteur['sc_titre'] = 'Sélectionnez une fiche de frais à rembourser :';
+
         echo view('structures/souscontenu_entete', $data_visiteur);
         echo view('liste_deroulante', $data_visiteur);
         echo view('structures/souscontenu_pied');
 
-        // Liste des mois correspondants au visiteur sélectionné
-        if ($this->id_visiteur_selectionne) {
-            $les_anneemois = $this->gsb_model->get_les_mois_disponibles($this->id_visiteur_selectionne);
-            // Si aucun mois sélectionné, prendre le premier disponible
-            if (!$this->annee_mois) {
-                $this->annee_mois = $les_anneemois[0]['anneemois'];
+        $annee_selectionnee = null;
+        $mois_selectionne = null;
+
+        foreach ($les_visiteurs as $un_visiteur) {
+            if ($un_visiteur['idutilisateur'] == $this->selection_visiteur_fichefrais_va) {
+                $annee_selectionnee = $un_visiteur['annee'];
+                $mois_selectionne = $un_visiteur['mois'];
+                break; // Arrête la recherche dès que les infos sont trouvées
             }
+        }
 
-            // Liste déroulante des mois
-            $options_mois = [];
-            foreach ($les_anneemois as $une_anneemois) {
-                $libelle = $this->gsb_lib->get_nom_mois($une_anneemois['mois']) . " " . $une_anneemois['annee'];
-                $options_mois[$une_anneemois['anneemois']] = $libelle;
-            }
-            $data_mois['lst_contenu'] = $options_mois;
-            $data_mois['lst_select'] = $this->annee_mois;
-            $data_mois['lst_action'] = 'remboursement/selectionner_mois';
-            $data_mois['lst_id'] = 'lstMois';
-            $data_mois['lst_label'] = 'Mois';
-            $data_mois['sc_titre'] = 'Mois à sélectionner :';
-            echo view('structures/souscontenu_entete', $data_mois);
-            echo view('liste_deroulante', $data_mois);
-            echo view('structures/souscontenu_pied');
+        // Zone état
+        $fiche = $this->gsb_model->get_id_ficheFrais($this->selection_visiteur_fichefrais_va, $annee_selectionnee, $mois_selectionne);
 
-            // Fiche sélectionnée
-            $num_annee = $this->gsb_lib->get_annee_from_anneemois($this->annee_mois);
-            $num_mois = $this->gsb_lib->get_mois_from_anneemois($this->annee_mois);
-            $date_titre = $this->gsb_lib->get_nom_mois($num_mois) . " " . $num_annee;
+        if ($fiche != null && !empty($fiche['idFiche'])) {
+            $this->id_fiche = $fiche['idFiche'];
+            $detail_fiche = $this->gsb_model->get_les_infos_ficheFrais($this->id_fiche);
 
-            $data['sc_titre'] = 'Fiche de frais du mois de ' . $date_titre . ' :';
+            $detail_fiche['dateModifFr'] = $this->gsb_lib->date_vers_francais($detail_fiche['dateModif']);
+            $detail_fiche['montantFormate'] = $this->gsb_lib->format_montant($detail_fiche['montantValide']);
+
+            $data['fiche'] = $detail_fiche;
+            $data['idFiche'] = $this->id_fiche;
 
             echo view('structures/souscontenu_entete', $data);
 
-            // Zone état
-            $fiche = $this->gsb_model->get_id_ficheFrais($this->id_visiteur_selectionne, $num_annee, $num_mois);
-            $this->id_fiche = $fiche['idFiche'];
-            $detailFiche = $this->gsb_model->get_les_infos_ficheFrais($this->id_fiche);
-            $detailFiche['dateModifFr'] = $this->gsb_lib->date_vers_francais($detailFiche['dateModif']);
-            $detailFiche['montantFormate'] = $this->gsb_lib->format_montant($detailFiche['montantValide']);
-            $data['fiche'] = $detailFiche;
-            $data['idFiche'] = $this->id_fiche;
+            // Affichage de l'état de la fiche
             echo view('etat_fiche', $data);
 
             // Frais forfait
@@ -161,18 +135,20 @@ class Remboursement extends BaseController
             echo view('fraisforfait_table', $data);
 
             // Frais hors forfait
-            $listeFraisHorsForfait = $this->gsb_model->get_les_frais_hors_forfait($this->id_fiche);
-            foreach ($listeFraisHorsForfait as &$fraisHF) {
-                $fraisHF['dateFraisFR'] = $this->gsb_lib->date_vers_francais($fraisHF['dateFrais']);
-                $fraisHF['montantFormate'] = $this->gsb_lib->format_montant($fraisHF['montant']);
+            $liste_frais_hf = $this->gsb_model->get_les_frais_hors_forfait($this->id_fiche);
+
+            foreach ($liste_frais_hf as $cle => $frais_hf) {
+                $liste_frais_hf[$cle]['dateFraisFR'] = $this->gsb_lib->date_vers_francais($frais_hf['dateFrais']);
+                $liste_frais_hf[$cle]['montantFormate'] = $this->gsb_lib->format_montant($frais_hf['montant']);
             }
-            unset($fraisHF);
-            $data['fraishorsforfait'] = $listeFraisHorsForfait;
+
+            $data['fraishorsforfait'] = $liste_frais_hf;
             echo view('fraishorsforfait_table', $data);
 
             // Bouton rembourser
-            $data_bouton['id_visiteur_selectionne'] = $this->id_visiteur_selectionne;
-            $data_bouton['annee_mois'] = $this->annee_mois;
+            $data_bouton['selection_visiteur_fichefrais_va'] = $this->selection_visiteur_fichefrais_va;
+            $data_bouton['annee'] = $annee_selectionnee;
+            $data_bouton['mois'] = $mois_selectionne;
             echo view('bouton_rembourser', $data_bouton);
 
             echo view('structures/souscontenu_pied');

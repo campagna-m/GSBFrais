@@ -1,0 +1,99 @@
+DEBUG - 2025-10-09 14:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:17:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:36:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:37:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:43:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:44:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 14:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:57:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:57:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:57:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 15:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 16:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 16:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 16:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-09 16:21:41 --> Error connecting to the database: mysqli_sql_exception: Accès refusé pour l'utilisateur: 'root'@'@localhost' (mot de passe: OUI) in C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', 'root', 'database', 3306, '', 0)
+#1 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `n...', Array, false)
+#4 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\app\Models\GsbModel.php(16): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\app\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_visiteur('dgg', 'gfd')
+#6 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+#7 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#8 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\rewrite.php(44): require_once('C:\\Users\\Guilla...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Accès refusé pour l'utilisateur: '****'@'@localhost' (mot de passe: OUI) in C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `n...', Array, false)
+#3 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\app\Models\GsbModel.php(16): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\app\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_visiteur('dgg', 'gfd')
+#5 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+#6 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#7 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\Users\GuillaumeCaro\Documents\Caro\Enseignement\BTS SIO\A-2025-2026 - Cours Caro\BTS2_B2-Web\AP-GSB-Frais\GSBFrais-init\system\rewrite.php(44): require_once('C:\\Users\\Guilla...')
+#12 {main}
+CRITICAL - 2025-10-09 16:21:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Accès refusé pour l'utilisateur: '****'@'@localhost' (mot de passe: OUI)
+[Method: POST, Route: connexion/valider]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nom`, `prenom`, `login`
+FROM `visiteur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 3 APPPATH\Models\GsbModel.php(16): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_visiteur('dgg', 'gfd')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\GuillaumeCaro\\Documents\\Caro\\Enseignement\\BTS SIO\\A-2025-2026 - Cours Caro\\BTS2_B2-Web\\AP-GSB-Frais\\GSBFrais-init\\public\\index.php')
+DEBUG - 2025-10-09 16:21:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 16:21:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 16:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 16:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

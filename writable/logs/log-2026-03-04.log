@@ -1,0 +1,221 @@
+DEBUG - 2026-03-04 14:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:27:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:28:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:29:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:29:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 14:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 16:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 16:24:43 --> ArgumentCountError: Too few arguments to function App\Models\GsbModel::get_id_ficheFrais(), 1 passed in Z:\BTS2\Informatique\AP\PITON\GSBFrais\app\Controllers\Remboursement.php on line 104 and exactly 3 expected
+[Method: GET, Route: remboursement]
+in APPPATH\Models\GsbModel.php on line 43.
+ 1 APPPATH\Controllers\Remboursement.php(104): App\Models\GsbModel->get_id_ficheFrais('a17')
+ 2 APPPATH\Controllers\Remboursement.php(33): App\Controllers\Remboursement->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 16:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 16:27:46 --> ArgumentCountError: Too few arguments to function App\Models\GsbModel::get_id_ficheFrais(), 1 passed in Z:\BTS2\Informatique\AP\PITON\GSBFrais\app\Controllers\Remboursement.php on line 110 and exactly 3 expected
+[Method: GET, Route: remboursement]
+in APPPATH\Models\GsbModel.php on line 43.
+ 1 APPPATH\Controllers\Remboursement.php(110): App\Models\GsbModel->get_id_ficheFrais('a17')
+ 2 APPPATH\Controllers\Remboursement.php(33): App\Controllers\Remboursement->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 16:32:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 16:32:49 --> ArgumentCountError: Too few arguments to function App\Models\GsbModel::get_id_ficheFrais(), 1 passed in Z:\BTS2\Informatique\AP\PITON\GSBFrais\app\Controllers\Remboursement.php on line 108 and exactly 3 expected
+[Method: GET, Route: remboursement]
+in APPPATH\Models\GsbModel.php on line 43.
+ 1 APPPATH\Controllers\Remboursement.php(108): App\Models\GsbModel->get_id_ficheFrais('a17')
+ 2 APPPATH\Controllers\Remboursement.php(34): App\Controllers\Remboursement->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 16:32:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 16:32:53 --> ArgumentCountError: Too few arguments to function App\Models\GsbModel::get_id_ficheFrais(), 1 passed in Z:\BTS2\Informatique\AP\PITON\GSBFrais\app\Controllers\Remboursement.php on line 108 and exactly 3 expected
+[Method: GET, Route: remboursement]
+in APPPATH\Models\GsbModel.php on line 43.
+ 1 APPPATH\Controllers\Remboursement.php(108): App\Models\GsbModel->get_id_ficheFrais('a17')
+ 2 APPPATH\Controllers\Remboursement.php(34): App\Controllers\Remboursement->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 16:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 16:34:20 --> ArgumentCountError: Too few arguments to function App\Models\GsbModel::get_id_ficheFrais(), 1 passed in Z:\BTS2\Informatique\AP\PITON\GSBFrais\app\Controllers\Remboursement.php on line 108 and exactly 3 expected
+[Method: GET, Route: remboursement]
+in APPPATH\Models\GsbModel.php on line 43.
+ 1 APPPATH\Controllers\Remboursement.php(108): App\Models\GsbModel->get_id_ficheFrais('a17')
+ 2 APPPATH\Controllers\Remboursement.php(34): App\Controllers\Remboursement->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 16:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 16:44:32 --> ErrorException: Undefined property: App\Controllers\Remboursement::$annee_mois
+[Method: GET, Route: remboursement]
+in APPPATH\Controllers\Remboursement.php on line 108.
+ 1 APPPATH\Controllers\Remboursement.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Remboursement::$annee_mois', 'Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\app\\Controllers\\Remboursement.php', 108)
+ 2 APPPATH\Controllers\Remboursement.php(34): App\Controllers\Remboursement->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 16:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 16:51:25 --> ArgumentCountError: Too few arguments to function App\Models\GsbModel::get_id_ficheFrais(), 1 passed in Z:\BTS2\Informatique\AP\PITON\GSBFrais\app\Controllers\Remboursement.php on line 109 and exactly 3 expected
+[Method: GET, Route: remboursement]
+in APPPATH\Models\GsbModel.php on line 43.
+ 1 APPPATH\Controllers\Remboursement.php(109): App\Models\GsbModel->get_id_ficheFrais('a17')
+ 2 APPPATH\Controllers\Remboursement.php(34): App\Controllers\Remboursement->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 17:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:03:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:04:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 17:04:08 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: remboursement]
+in SYSTEMPATH\Database\BaseConnection.php on line 944.
+ 1 SYSTEMPATH\Model.php(713): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(917): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Remboursement.php(78): CodeIgniter\Model->__call('get_tous_les_visiteurs', [])
+ 4 APPPATH\Controllers\Remboursement.php(36): App\Controllers\Remboursement->commun()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 17:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 17:04:13 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: remboursement]
+in SYSTEMPATH\Database\BaseConnection.php on line 944.
+ 1 SYSTEMPATH\Model.php(713): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(917): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Remboursement.php(78): CodeIgniter\Model->__call('get_tous_les_visiteurs', [])
+ 4 APPPATH\Controllers\Remboursement.php(36): App\Controllers\Remboursement->commun()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 17:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 17:31:46 --> ErrorException: Undefined variable $annee
+[Method: POST, Route: remboursement/maj_etat_fiches_mois_rembourse]
+in APPPATH\Views\bouton_rembourser.php on line 14.
+ 1 APPPATH\Views\bouton_rembourser.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $annee', 'Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\app\\Views\\bouton_rembourser.php', 14)
+ 2 SYSTEMPATH\View\View.php(226): include('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\app\\Views\\bouton_rembourser.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('bouton_rembourser', [], true)
+ 5 APPPATH\Controllers\Remboursement.php(144): view('bouton_rembourser', [...])
+ 6 APPPATH\Controllers\Remboursement.php(52): App\Controllers\Remboursement->commun()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->majEtatFichesMoisRembourse()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
+DEBUG - 2026-03-04 17:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-04 17:32:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-04 17:32:12 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: remboursement/maj_etat_fiches_mois_rembourse]
+in APPPATH\Controllers\Remboursement.php on line 120.
+ 1 APPPATH\Controllers\Remboursement.php(120): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\app\\Controllers\\Remboursement.php', 120)
+ 2 APPPATH\Controllers\Remboursement.php(52): App\Controllers\Remboursement->commun()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Remboursement->majEtatFichesMoisRembourse()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Remboursement))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('Z:\\BTS2\\Informatique\\AP\\PITON\\GSBFrais\\public\\index.php')
