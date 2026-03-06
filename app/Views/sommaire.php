@@ -14,7 +14,7 @@ $session = session();
         <ul class="menuList">
             <li>
                 <?= anchor('connexion/deconnexion', 'Déconnexion', ['title' => 'Se déconnecter']) ?>
-                <?= anchor('paramètres/mdp', 'Mot de passe', ['title' => 'Changer mot de passe']) ?>
+                <?= anchor('motdepasse', 'Mot de passe', ['title' => 'Changer le mot de passe']) ?>
             </li>
         </ul>
     </div>
