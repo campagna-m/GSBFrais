@@ -26,3 +26,5 @@ $routes->get('validation', 'Validation::index');
 $routes->get('remboursement', 'Remboursement::index');
 $routes->post('remboursement/selection_fiches_frais_va', 'Remboursement::selection_fiches_frais_va');
 $routes->post('remboursement/maj_etat_fiches_rembourse', 'Remboursement::maj_etat_fiches_mois_rembourse');
+
+$routes->get('motdepasse', 'MotDePasse::index');

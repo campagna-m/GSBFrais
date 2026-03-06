@@ -230,4 +230,12 @@ class GsbModel extends Model
             ->where('mois', $mois)
             ->update(['idEtat' => 'RB']);
     }
+
+    // Sélection des mots de passe utilisateur
+    // Select
+    public function get_infos_mdp() {}
+
+    // Met à jour le mot de passe utilisateur
+    //update
+    public function maj_motdepasse() {}
 }
