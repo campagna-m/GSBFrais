@@ -232,12 +232,13 @@ class GsbModel extends Model
     }
 
     // Sélection des mots de passe utilisateur
-    public function get_infos_mdp()
+    public function get_infos_mdp($idutilisateur)
     {
         return $this->db->table('utilisateur')
             ->select('idutilisateur, mdp, dateCreationMdp')
+            ->where('idutilisateur', $idutilisateur)
             ->get()
-            ->getResultArray();
+            ->getRowArray();
     }
 
     // Met à jour le mot de passe utilisateur

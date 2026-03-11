@@ -28,3 +28,4 @@ $routes->post('remboursement/selection_fiches_frais_va', 'Remboursement::selecti
 $routes->post('remboursement/maj_etat_fiches_rembourse', 'Remboursement::maj_etat_fiches_mois_rembourse');
 
 $routes->get('motdepasse', 'MotDePasse::index');
+$routes->post('motdepasse/valider', 'MotDePasse::valider');
