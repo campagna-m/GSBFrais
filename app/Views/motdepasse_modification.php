@@ -9,6 +9,19 @@ $validation = session('validation');
     <div class="corpsForm">
 
         <p>
+            <?= form_label('Ancien mdp*', 'ancienMdp') ?>
+            <?= form_password([
+                'name' => 'ancienMdp',
+                'id' => 'ancienMdp',
+                'maxlength' => 45,
+                'size' => 15
+            ]) ?>
+            <?php if (isset($validation) && $validation->hasError('ancienMdp')): ?>
+                <span class="erreurSaisie"><?= esc($validation->getError('ancienMdp')) ?></span>
+            <?php endif; ?>
+        </p>
+
+        <p>
             <?= form_label('Nouveau mdp*', 'nouveauMdp') ?>
             <?= form_password([
                 'name' => 'nouveauMdp',
@@ -43,5 +56,5 @@ $validation = session('validation');
     </div>
 
     <?= form_close(); ?>
-    
+
 </div>

@@ -71,7 +71,7 @@ class Connexion extends BaseController
                 'isLoggedIn' => true
             ]);
 
-            if ($differenceJours >= 1) { 
+            if ($differenceJours > 90) { 
                 session()->set('force_changement_mdp', true);
                 return redirect()->to('/motdepasse')->with('erreurs', 'Votre mot de passe a expiré, vous devez le changer.');
             }

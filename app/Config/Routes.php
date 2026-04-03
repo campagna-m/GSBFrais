@@ -22,6 +22,8 @@ $routes->get('etatfrais', 'Etatfrais::index');
 $routes->post('etatfrais/mois', 'Etatfrais::selectionner_mois');
 
 $routes->get('validation', 'Validation::index');
+$routes->post('validation/selection_fiches_frais_cl', 'Validation::selection_fiches_frais_cl');
+$routes->post('validation/maj_etat_fiches_valide', 'Validation::maj_etat_fiches_mois_valide');
 
 $routes->get('remboursement', 'Remboursement::index');
 $routes->post('remboursement/selection_fiches_frais_va', 'Remboursement::selection_fiches_frais_va');

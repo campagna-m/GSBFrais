@@ -62,7 +62,7 @@ class Remboursement extends BaseController
         echo view('structures/contenu_entete', $data);
 
         // Liste des visiteurs VA
-        $les_visiteurs = $this->gsb_model->get_visiteurs_fiches_VA();
+        $les_visiteurs = $this->gsb_model->get_visiteurs_fiches_etat("VA");
 
         if (!$les_visiteurs) {
             return redirect()->back()->with('erreurs', 'Aucun visiteur trouvé');
@@ -157,4 +157,5 @@ class Remboursement extends BaseController
             echo view('structures/page_pied');
         }
     }
+    
 }

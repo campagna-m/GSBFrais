@@ -207,14 +207,14 @@ class GsbModel extends Model
         return $resultat;
     }
 
-    // Sélection des fiches de frais en état Validé (VA) pour les visiteurs
-    public function get_visiteurs_fiches_VA()
+    // Sélection des fiches de frais pour le visiteurs selon l'idEtat en paramètre
+    public function get_visiteurs_fiches_etat($idEtat)
     {
         return $this->db->table('fichefrais')
             ->select('utilisateur.idutilisateur, utilisateur.nom, utilisateur.prenom, fichefrais.idFiche, fichefrais.annee, fichefrais.mois, fichefrais.idEtat')
             ->join('utilisateur', 'fichefrais.idVisiteur = utilisateur.idutilisateur')
             ->where('utilisateur.idRole', 'VM')
-            ->where('fichefrais.idEtat', 'VA')
+            ->where('fichefrais.idEtat', $idEtat)
             ->orderBy('utilisateur.nom', 'ASC')
             ->get()
             ->getResultArray();
@@ -251,4 +251,5 @@ class GsbModel extends Model
                 'dateCreationMdp' => date('Y-m-d')
             ]);
     }
+    
 }

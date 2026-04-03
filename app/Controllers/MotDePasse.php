@@ -46,6 +46,10 @@ class MotDePasse extends BaseController
     public function valider()
     {
         $reglesSaisie = [
+            'ancienMdp' => [
+                'rules' => 'required',
+                'label' => 'Ancien mot de passe'
+            ],
             'nouveauMdp' => [
                 'rules' => 'required|min_length[12]|regex_match[/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).+$/]',
                 'label' => 'Nouveau mot de passe',
@@ -68,8 +72,17 @@ class MotDePasse extends BaseController
             return redirect()->back()->withInput()->with('validation', $this->validator);
         }
 
-        $nouveauMdp = $this->request->getPost('nouveauMdp');
         $idutilisateur = session()->get('idutilisateur');
+
+        $ancienMdpSaisi = $this->request->getPost('ancienMdp');
+        $infosMdpBDD = $this->gsb_model->get_infos_mdp($idutilisateur);
+
+        // Vérifie si le mot de passe de la BDD est différent de l'ancien mot de passe saisi
+        if ($infosMdpBDD['mdp'] !== $ancienMdpSaisi) {
+            return redirect()->back()->withInput()->with('erreurs', 'L\'ancien mot de passe est incorrect.');
+        }
+
+        $nouveauMdp = $this->request->getPost('nouveauMdp');
 
         // Met à jour le mot de passe utilisateur
         $this->gsb_model->maj_motdepasse($idutilisateur, $nouveauMdp);
