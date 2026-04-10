@@ -10,7 +10,7 @@
         <p>
             <?= form_open('validation/maj_etat_fiches_valider') ?>
 
-            <?= form_hidden('visiteur', $selection_visiteur_fichefrais) ?>
+            <?= form_hidden('visiteur', $selection_visiteur_fichefrais_cl) ?>
             <?= form_hidden('annee', $annee) ?>
             <?= form_hidden('mois', $mois) ?>
             

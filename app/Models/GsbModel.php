@@ -50,6 +50,7 @@ class GsbModel extends Model
             ->get()
             ->getRowArray();
     }
+
     /** Infos fiche de frais pour un mois */
     public function get_les_infos_ficheFrais($idFiche)
     {
@@ -207,7 +208,7 @@ class GsbModel extends Model
         return $resultat;
     }
 
-    // Sélection des fiches de frais pour le visiteurs selon l'idEtat en paramètre
+    // Sélection des fiches de frais pour les visiteurs selon l'idEtat en paramètre
     public function get_visiteurs_fiches_etat($idEtat)
     {
         return $this->db->table('fichefrais')
@@ -218,17 +219,6 @@ class GsbModel extends Model
             ->orderBy('utilisateur.nom', 'ASC')
             ->get()
             ->getResultArray();
-    }
-
-    // Met à jour l'état d'une fiche à Remboursé (RB)
-    public function maj_etat_fiches_rembourse($idvisiteur, $annee, $mois)
-    {
-        return $this->db->table('fichefrais')
-            ->where('idEtat', 'VA')
-            ->where('idVisiteur', $idvisiteur)
-            ->where('annee', $annee)
-            ->where('mois', $mois)
-            ->update(['idEtat' => 'RB']);
     }
 
     // Sélection des mots de passe utilisateur
@@ -251,5 +241,78 @@ class GsbModel extends Model
                 'dateCreationMdp' => date('Y-m-d')
             ]);
     }
-    
+
+    // Met à jour l'état d'une fiche à Remboursé (RB)
+    public function maj_etat_fiches_rembourse($idvisiteur, $annee, $mois)
+    {
+        return $this->db->table('fichefrais')
+            ->where('idEtat', 'VA')
+            ->where('idVisiteur', $idvisiteur)
+            ->where('annee', $annee)
+            ->where('mois', $mois)
+            ->update(['idEtat' => 'RB']);
+    }
+
+    // Calcul le montant des fraisforfait et fraishorsforfait
+    public function get_montant_fraisforfait_fraishorsforfait($idFiche)
+    {
+        $total = 0;
+
+        $lesFraisForfait = $this->db->table('lignefraisforfait')
+            ->join('fraisforfait', 'lignefraisforfait.idFraisForfait = fraisforfait.idfraisforfait')
+            ->where('idFiche', $idFiche)
+            ->get()
+            ->getResultArray();
+
+        foreach ($lesFraisForfait as $frais) {
+            $total += ($frais['quantite'] * $frais['montant']);
+        }
+
+        $lesFraisHorsForfait = $this->db->table('lignefraishorsforfait')
+            ->where('idFiche', $idFiche)
+            ->notLike('libelle', 'REFUSE')
+            ->get()
+            ->getResultArray();
+
+        foreach ($lesFraisHorsForfait as $fraisHF) {
+            $total += $fraisHF['montant'];
+        }
+
+        return $total;
+    }
+
+    // Refuser un frais hors forfait
+    public function refuser_frais_hors_forfait($idFrais)
+    {
+        $fraishorsforfait = $this->db->table('lignefraishorsforfait')
+            ->where('idLigneFHF', $idFrais)
+            ->notLike('libelle', 'REFUSE')
+            ->get()
+            ->getRowArray();
+
+        if ($fraishorsforfait != null) {
+
+            $this->db->table('lignefraishorsforfait')
+                ->where('idLigneFHF', $idFrais)
+                ->update(['libelle' => 'REFUSE : ' . $fraishorsforfait['libelle']]);
+        }
+    }
+
+    // Met à jour l'état d'une fiche à Validé (VA) et sauvegarde le montant
+    public function maj_etat_fiches_valider($idvisiteur, $annee, $mois)
+    {
+
+        $fiche = $this->get_id_ficheFrais($idvisiteur, $annee, $mois);
+        $montant = $this->get_montant_fraisforfait_fraishorsforfait($fiche['idFiche']);
+
+        return $this->db->table('fichefrais')
+            ->where('idEtat', 'CL')
+            ->where('idVisiteur', $idvisiteur)
+            ->where('annee', $annee)
+            ->where('mois', $mois)
+            ->update([
+                'idEtat' => 'VA',
+                'montantValide' => $montant
+            ]);
+    }
 }

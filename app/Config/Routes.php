@@ -21,13 +21,15 @@ $routes->get('gererfrais/supp_fraishorsforfait/(:num)', 'Gererfrais::supprimer_f
 $routes->get('etatfrais', 'Etatfrais::index');
 $routes->post('etatfrais/mois', 'Etatfrais::selectionner_mois');
 
-$routes->get('validation', 'Validation::index');
-$routes->post('validation/selection_fiches_frais_cl', 'Validation::selection_fiches_frais_cl');
-$routes->post('validation/maj_etat_fiches_valide', 'Validation::maj_etat_fiches_mois_valide');
-
 $routes->get('remboursement', 'Remboursement::index');
 $routes->post('remboursement/selection_fiches_frais_va', 'Remboursement::selection_fiches_frais_va');
 $routes->post('remboursement/maj_etat_fiches_rembourse', 'Remboursement::maj_etat_fiches_mois_rembourse');
 
 $routes->get('motdepasse', 'MotDePasse::index');
 $routes->post('motdepasse/valider', 'MotDePasse::valider');
+
+$routes->get('validation', 'Validation::index');
+$routes->post('validation/selection_fiches_frais_cl', 'Validation::selection_fiches_frais_cl');
+$routes->post('validation/corriger_fraisforfait', 'Validation::corriger_fraisforfait');
+$routes->get('validation/refuser_fraishorsforfait/(:num)', 'Validation::refuser_fraishorsforfait/$1');
+$routes->post('validation/maj_etat_fiches_valider', 'Validation::maj_etat_fiches_valider');
